@@ -4,13 +4,15 @@
 //C program that uses puts to output text to screen
 
 int main() {
-   
+
    char father[255];
    char son[255];
-
-   strcpy(father, "Luke I am your father!!!!");
-   strcpy(son, "NO NO NO NO, this can't be!!!!");
-
+   char result[255]; 
+   
+   strcpy(father, "ACM Code of Ethics and");
+   strcpy(son, "Proffesional conduct");
+   
    puts(father);
    puts(son);
+
 }
