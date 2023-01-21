@@ -3,26 +3,25 @@
 #include<string.h>
 #include<math.h>
 int main(){
-   int a = 0;
-   int b = 0;
-   int nofloat = 0;
+   int a;
+   int b;
    printf("Enter your value for int 1:\n");
    scanf("%d", &a);//get input from user
    printf("Enter your value for int 2:\n");
    scanf("%d", &b);//get input from user
+   //add
+   printf("the sum of %d and %d is:%d\n",a, b, (a+b));
 
-   nofloat = a + b;//add
-   printf("the sum of %d and %d is:%d\n",a, b, nofloat);
-
-   nofloat = a - b;//subtract
-   printf("the diffrence of %d an d%d is:%d\n", a, b, nofloat);
+   //subtract
+   printf("the diffrence of %d and %d is:%d\n", a, b, (a-b));
    
-   nofloat = a * b;//multiply
-   printf("the product of %d and %d is %d\n", a, b, nofloat);
+   //multiply
+   printf("the product of %d and %d is %d\n", a, b, (a*b));
 
-   float temp = (float) a/b;
-   printf("the division of %d and %d is %.2f\n", a, b, temp);
+   //divide
+   float f = (float) a/b;
+   printf("the division of %d and %d is %.2f\n", a, b, f);
 
-   temp = a-(a/b)*b;//remainder
-   printf("the remainder of %d and %d is: %.2f\n", a, b, temp);
+   //remainder (modulo decomposed) 
+   printf("the remainder of %d and %d is: %d\n", a, b, (a%b));
 }
