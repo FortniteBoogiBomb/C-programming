@@ -12,7 +12,7 @@ int enemiesSmited;//global variable
 int yesOrNo(void);//function prototype
 int stabOrNot(void);//function prototype
 int kickTheKid(void);//function prototype
-int yesOrNo(void){
+int yesOrNo(void){//function for slecting yes or no
    int y = 0;
    printf("yes or no\n");
    printf("select 1 for yes and 2 for no\n");
@@ -24,7 +24,7 @@ int yesOrNo(void){
       return 0;
    }
 }
-int stabOrNot(void){
+int stabOrNot(void){//function to decide if you stab
    int s = 0;
    printf("will u stab?\n");
    printf("enter 1 to stab and 2 to not stab\n");
@@ -36,7 +36,7 @@ int stabOrNot(void){
       return 0;
    }
 }
-int kickTheKid(void){
+int kickTheKid(void){//will you kick the kid?
    static int st = 100;
    printf("you are %d percent likely to kick or get kicked!\n", st);//use of static variable
    int kick = 0;
@@ -60,7 +60,7 @@ int kickTheKid(void){
 
 
 
-int main (){
+int main (){//main 
    int option1 = 0; 
    int option2 = 0;
    int dead = 0;
