@@ -2,6 +2,12 @@
 #include<stdlib.h>
 #include<unistd.h>
 //The game of choices, if u chose correct you live, if you dont u die
+//You will be prompted with a yes or no qustion every step of your journey.
+//be weary! your choices decide yur fate
+//instructions:
+//each step of this game will prompt the user with a question or series of questions.
+//based on that choice, you will be led to another option
+//continue selecting yes or no by pressing 1 or 2 and play until you win or die.
 int enemiesSmited;//global variable
 int yesOrNo(void);//function prototype
 int stabOrNot(void);//function prototype
@@ -31,6 +37,8 @@ int stabOrNot(void){
    }
 }
 int kickTheKid(void){
+   static int st = 100;
+   printf("you are %d percent likely to kick or get kicked!\n", st);//use of static variable
    int kick = 0;
    scanf("%d", &kick);
    if(kick == 1){
@@ -47,6 +55,7 @@ int kickTheKid(void){
       printf("you get 2 bonus points for killing the evil child!\n");
       enemiesSmited +=2;//bonus points added to global variable 
    }
+   
 }
 
 
@@ -58,14 +67,34 @@ int main (){
    int sdead = 0;
    int yn = 0;
    int stab = 0;
-   printf("Hello Traveler and welcome to the game of chances\n");
+   printf("Hello Traveler and welcome to the game of chances (wait for execuion before doing anything) \n");
+   sleep(1);
+   printf(".............\n");
+   printf(".............\n");
+   printf(".............\n");
+   sleep(1);
    printf("Shortly you will be prompted with a question with two possible answers.\n");
+   sleep(1);
+   printf(".............\n");
+   printf(".............\n");
+   printf(".............\n");
+   sleep(1);
    printf("The choice you make will decide your fate\n");
+   sleep(1);
+   printf(".............\n");
+   printf(".............\n");
+   printf(".............\n");
+   sleep(1);
    printf("Which item will you chose to start with?\n");
+   sleep(1);
    printf("Option 1: a vintage bowie knife (well used but always reliable)\n");
    printf("Option 2: a soccer ball (it can be played with)\n");
+   printf(".............\n");
+   sleep(1);
    printf("Press 1 for knife,  press 2 for soccer ball\n");
    scanf("%d", &option1);
+   printf("..............\n");
+   sleep(1);
    //scanf("%d", &option2);
    printf("you chose option: %d\n", option1);
    

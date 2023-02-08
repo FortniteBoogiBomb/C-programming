@@ -18,6 +18,7 @@ int main(){
       if(j == 1){
          printf("please press r again for second roll\n");
       }
+      //read the documentation on this if it confuses you!
       system("/bin/stty raw");
       char m = getchar();
       while(m == '\n'){
