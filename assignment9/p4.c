@@ -10,26 +10,26 @@ void print_reversed(char *str);
 int is_palindrome(char *str) {
    int left = 0;
    int right = strlen(str) - 1;
-   while(right > left){
+   while(right > left){//loop thru string from first element to last (gcc reads strings from right-left
       if(str[left++] != str[right--]){
-         printf("%s: not a pal\n", str);
+         printf("%s: not a pal\n", str);//if string id not read the same backwards, return from function
          return 0;
       }
    }
-   printf("%s is a pal\n", str);
+   printf("%s is a pal\n", str);//else, string is a palindrome, return palindrome
    return 1;
 }
 // Prints the string, str in reverse. Doesn't end in a newline.
 void print_reversed(char *str) {
-   int temp = 0;
-   int len = strlen(str);
+   int temp = 0;//temp variable to mainpulate string 
+   int len = strlen(str);//find len
    int left = 0;
    int right = len - 1;
-   for(int i = left; i < right; i++) {
-      temp = str[i];
-      str[i] = str[right];
-      str[right] = temp;
-      right--;
+   for(int i = left; i < right; i++) {//loop through string backwards (left to right till length)
+      temp = str[i];//set temp to strings current index 
+      str[i] = str[right];//string index set to string[length=index] 
+      str[right] = temp;//extract index from temp
+      right--;//decrement at end of loop so entire string is evaluated 
    }
    printf("reversed string:%s\n", str);
 }

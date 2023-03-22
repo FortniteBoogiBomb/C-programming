@@ -1,10 +1,10 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-char* update(const char* sentence, char* target, char* newb);
-char* update(const char* sentence, char* target, char* newb){
+char* update(const char* sentence, char* target, char* replacement);
+char* update(const char* sentence, char* target, char* replacement){
    char *updated; 
-   int newblen = strlen(newb);
+   int replen = strlen(replacement);
    int targetlen = strlen(target);
    int count = 0;
    int i = 0;
@@ -17,12 +17,12 @@ char* update(const char* sentence, char* target, char* newb){
          i += targetlen - 1;
       }
    }
-   updated = (char*)malloc(i + count * (newblen - targetlen) + 1);//create space for new string in case it is larger
+   updated = (char*)malloc(i + count * (replen - targetlen) + 1);//create space for new string in case it is larger
    i = 0;
    while(*sentence){//loop trhough sentence
       if(strstr(sentence, target) == sentence){ //find needle in haystack?
-         strcpy(&updated[i], newb);
-         i += newblen;
+         strcpy(&updated[i], replacement);
+         i += replen;
          sentence += targetlen;  
       } 
       else{
@@ -33,25 +33,28 @@ char* update(const char* sentence, char* target, char* newb){
    return updated;
 }
 int main(void){
-   char *sentence = malloc(100);
-   char *target = malloc(25);
-   char *newb = malloc(25);
-   char *updated = NULL;
+   char *sentence = malloc(100);//dynamically allocate space for sentence 
+   char *target = malloc(25);//allocate space 
+   char *replacement = malloc(25);
+   char *updated = NULL;//create pointer for return value
    printf("enter your sentence to be changed\n");
-   fgets(sentence, 100, stdin);
+   fgets(sentence, 100, stdin);//must use a combination of scan anf fgets to recieve all inputs 
    printf("Now, enter your target string\n");
    scanf("%s", target);
    //fgets(target, 25, stdin);
    printf("Now, enter the replacement for target\n");
-   scanf("%s", newb);
+   scanf("%s", replacement);
    //fgets(newb, 25, stdin);
    printf("\n");
    printf("target is %s", target);
    printf("\n");
-   printf("repalce target with: %s\n", newb);
+   printf("repalce target with: %s\n", replacement);
    printf("\n\n\n");
    printf("original string is: %s\n", sentence);
-   updated = update(sentence, target, newb); 
+   updated = update(sentence, target, replacement); 
    printf("the new string is: %s", updated);
+   free(sentence);
+   free(target);
+   free(replacement);
 }
 
