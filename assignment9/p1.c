@@ -8,20 +8,17 @@ void send(char *word, char *word2, char *word3){
    replacevalue(&word, &word2, &word3);
 }
 void replacevalue(char **word, char **word2, char **word3){
-   char **temp = word;  // temp is a pointer to a *pointer*, not a pointer to a *char*
-    if(*temp != NULL) {
-        printf("%s ", *temp);
-        temp++;
+   if(*word != NULL) {
+        printf("%s ", *word);
+        word++;
     }
-    char **temp2 = word2;
-    if(*temp2 != NULL) {
-        printf("%s ", *temp2);
-        temp2++;
+    if(*word2 != NULL) {
+        printf("%s ", *word2);
+        word2++;
     }
-    char **temp3 = word3;
-    if(*temp3 != NULL) {
-        printf("%s", *temp3);
-        temp3++;
+    if(*word3 != NULL) {
+        printf("%s", *word3);
+        word3++;
     }
 }
 int main(){
