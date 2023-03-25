@@ -5,19 +5,15 @@
 int main(void){
   int n = 0;
   int i = 0;
-  //size_t j = 0;
   printf("Please enter number of words\n");
   scanf("%d", &n);
-  char words[n][20];
+  char **words = (char**)malloc(n * sizeof(char*));
   time_t t;
-  //char *arr = malloc(sizeof (int) * n);
-  //char* buff = malloc (sizeof (int) * n);
-  char *random;
+  char *random = malloc(sizeof(int) *n);
   for(i = 0; i < n; i++){
-      //words[i] = malloc(n + 1);
+      words[i] = malloc(n + 1);
       printf("Please enter word[%d]\n", i);
       scanf("%s", words[i]);
-      //fgets(words[i], 20, stdin);
   }
   srand((unsigned) time(&t));
   for(i = 0; i < 10; i++){
@@ -33,4 +29,6 @@ int main(void){
     }
     random[0] = tolower(random[0]);
   }
+  free(words);
+  free(random);
 }

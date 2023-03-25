@@ -14,7 +14,7 @@ int main(void){
   printf("Please enter length of surveyed area");
   scanf("%d", &len);
   int squared = len*wid;
-  int *waste = (int*)malloc(squared * sizeof(int));
+  int *waste = calloc(sizeof(int), squared);
   printf("Total area of Survey = %d meters\n", squared);
  
   for(i = 0; i < squared; i++){
