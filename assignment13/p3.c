@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include<string.h>
+#include <stdbool.h>
 char buffer[1000];
 void add_student();
 void load_students();
@@ -222,6 +223,7 @@ void delete_student(){
 int main(){
    load_student();
    int choice = 0;
+while(true){
    printf("Please enter a choice:\n");
    printf("Select 0 to exit program:\n");
    printf("Select 1 to add a student\n");
@@ -234,7 +236,7 @@ int main(){
       switch(choice) {
          case 0:
             printf("Exiting program\n");
-            break;
+            return 0;
          case 1:
             printf("Function to append student data");
             add_student();
@@ -257,5 +259,6 @@ int main(){
             delete_student();//make work if you have time
             break;
       }
+   }
    return 0;
 }
