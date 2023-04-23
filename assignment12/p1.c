@@ -1,5 +1,6 @@
 #include <stdio.h>
-unsigned bin(unsigned n){
+
+void bin(unsigned n){
     unsigned i;
     for (i = 1 << 8; i > 0; i = i / 2)
         (n & i) ? printf("1") : printf("0");
@@ -7,10 +8,10 @@ unsigned bin(unsigned n){
  
 int main(void){
     int num;
-    unsigned ret = 0;
+    //unsigned ret = 0;
     printf("Enter an integer");
     scanf("%d", &num);
-    ret = bin(num);
+    //ret = bin(num);
     printf("\n");
     printf("The number of bits set to 1 in %d is:", num);
     int count=0;
@@ -19,5 +20,6 @@ int main(void){
          count++;
     }
     printf(" %d", count);
+    //(void)ret;
 }
 
